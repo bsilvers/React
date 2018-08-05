@@ -1,54 +1,91 @@
 'use strict';
 
-// arguments object - no longer bound with arrow functions
+console.log('App.js is running!');
 
-// const add = function(a,b) {
-//     console.log(arguments);
-//     return a + b;
-// };
-
-var add = function add(a, b) {
-    return a + b;
+var appObject = {
+    title: 'Indecision App',
+    subTitle: 'Put your life in the hands of a computer.',
+    options: ['One', 'Two']
 };
 
-console.log(add(55, 1));
+// JSX - Javascript XML
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        appObject.title
+    ),
+    appObject.subTitle && React.createElement(
+        'p',
+        null,
+        appObject.subTitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        appObject.options && appObject.options.length > 0 ? 'Here are your options' : 'No options'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'Item ',
+            appObject.options[0]
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Item ',
+            appObject.options[1]
+        )
+    )
+);
 
-// this keyword -  no longer bound with arrow functions
-
-var user = {
-    name: 'Andrew',
-    cities: ['Philidalphia', 'New York', 'Dublin'],
-    printPlacesLived: function printPlacesLived() {
-        var _this = this;
-
-        // console.log(this.name);
-        // console.log(this.cities);
-        // const that = this;
-        return this.cities.map(function (city) {
-            return _this.name + ' has lived in ' + city;
-        });
-        //return cityMessages;
-        // this.cities.forEach((city) => {
-        //     console.log(this.name + ' has lived in ' + city );
-        // })
-    }
+var count = 0;
+var addOne = function addOne() {
+    console.log('addOne');
+    // count++;
+};
+var minusOne = function minusOne() {
+    console.log('minusOne');
 };
 
-console.log(user.printPlacesLived());
-
-// Challenge area
-
-var multiplier = {
-    // numbers - array of numbers
-    // multiplyBy - single number
-    // multiply - return a new array where the number have been multiplied
-    multiply: function multiply(numbers, multiplyBy) {
-        return numbers.map(function (number) {
-            return number * multiplyBy;
-        });
-    }
+var reset = function reset() {
+    console.log('reset');
 };
 
-var numbers = [1, 2, 3];
+var template2 = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Count: ',
+        count
+    ),
+    React.createElement(
+        'button',
+        { onClick: addOne },
+        '+1'
+    ),
+    React.createElement(
+        'button',
+        { onClick: minusOne },
+        '-1'
+    ),
+    React.createElement(
+        'button',
+        { onClick: reset },
+        'reset'
+    )
+);
+console.log(template2);
 
-console.log(multiplier.multiply(numbers, 2));
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(template2, appRoot);
+// ReactDOM.render(template2, appRoot);

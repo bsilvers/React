@@ -19,34 +19,30 @@ const template = (
 </div>
 );
 
-const user = {
-    name: 'Brian',
-    age: 46,
-    location: 'Bedford, Tx'
+let count = 0;
+const addOne = ()=> {
+    console.log('addOne');
+    // count++;
 };
-
-function getSubtitle(subTitle) {
-    if(subTitle) {
-        return <p>{appObject.subTitle}</p>;
-    }
+const minusOne = () => {
+    console.log('minusOne');
 }
 
-function getLocation(location) {
-    if (location) {
-        return <p>Location: {location}</p>;
-    }
+const reset = ()=> {
+    console.log('reset');
 }
 
 const template2 = (
-<div>
-    <h1>{user.name ? user.name : 'Anonymous' }</h1>
-
-     {  (user.age && user.age >= 18) && <p>Age: {user.age}</p>  }
-    {getLocation(user.location)}
-</div>
+    <div>
+        <h1>Count: {count}</h1>
+        <button onClick={addOne}>+1</button>
+        <button onClick={minusOne}>-1</button>
+        <button onClick={reset}>reset</button>
+    </div>
 );
+console.log(template2);
 
 const appRoot = document.getElementById('app');
 
- ReactDOM.render(template, appRoot);
+ ReactDOM.render(template2, appRoot);
 // ReactDOM.render(template2, appRoot);
