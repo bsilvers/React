@@ -16,15 +16,25 @@ const hideDetails = () => {
     console.log(app.hideDetails);
     render();
 };
+
+let visibility = false;
+
+const toggleVisibility = () => {
+    visibility = !visibility;
+    render();
+}
+
 const appRoot = document.getElementById('app');
 
 const render = () => {
     const template = (
         <div>
             <h1>{app.title}</h1>
-            <button hidden={!app.hideDetails} onClick={showDetails}>Show details</button>
-            <button hidden={app.hideDetails} onClick={hideDetails}>Hide details</button>
-            <p hidden={app.hideDetails}>{app.subTitle}</p>
+            
+            <button onClick={toggleVisibility}>
+                { visibility ? 'Hide details' : 'Show details' };
+            </button>
+            <p hidden={!visibility}>{app.subTitle}</p>
         </div>
     );
     ReactDOM.render(template, appRoot);
