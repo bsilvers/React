@@ -61,4 +61,9 @@ console.log(other.getDescription());
 
 const me2 = new Traveler('Brian Silvers', 46, 'Chicago');
 console.log(me2);
-console.log(me2.getGreeting());
+console.log(me2.getGreeting()); 
+
+
+const me3 = new Traveler(undefined, undefined, 'Nowhere');
+console.log(me3);
+console.log(me3.getGreeting()); 
