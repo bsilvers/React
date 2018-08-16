@@ -1,3 +1,7 @@
+// Grab the add function from the add.js file in the utils folder.
+// add(2, 4)
+
+
 class IndecisionApp extends React.Component {
     constructor(props) {
         super(props);
@@ -6,7 +10,7 @@ class IndecisionApp extends React.Component {
         this.handleAddOption = this.handleAddOption.bind(this);
         this.handleDeleteOption = this.handleDeleteOption.bind(this);
         this.state = {
-            options: props.options
+            options: []
         };
     }
 
