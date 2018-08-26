@@ -1,11 +1,7 @@
-// import './utils.js';
-// import { square, add } from './utils.js';
-import { isAdult, canDrink } from './person.js';
+// install -> import -> use
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// console.log('app.js is running!!');
-// console.log(square(4));
-// console.log(add(100,23));
+const template = <p>This is JSX from webpack</p>;  // React.createElement('p', {}, 'testing 123');
 
-console.log(isAdult(17));
-console.log(canDrink(22));
-
+ReactDOM.render(template, document.getElementById('app'));

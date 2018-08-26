@@ -1,12 +1,20 @@
 'use strict';
 
-var _person = require('./person.js');
+var _react = require('react');
 
-// console.log('app.js is running!!');
-// console.log(square(4));
-// console.log(add(100,23));
+var _react2 = _interopRequireDefault(_react);
 
-console.log((0, _person.isAdult)(17)); // import './utils.js';
-// import { square, add } from './utils.js';
+var _reactDom = require('react-dom');
 
-console.log((0, _person.canDrink)(22));
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// install -> import -> use
+var template = _react2.default.createElement(
+  'p',
+  null,
+  'This is JSX from webpack'
+); // React.createElement('p', {}, 'testing 123');
+
+_reactDom2.default.render(template, document.getElementById('app'));
