@@ -7,7 +7,7 @@ export const addExpense = (
          description = '', 
          note = '', 
          amount = 0, 
-         creaetdAt = 0
+         createdAt = 0
     } = {}
     ) => ({
     type: 'ADD_EXPENSE',
@@ -16,7 +16,7 @@ export const addExpense = (
         description,
         note,
         amount,
-        creaetdAt
+        createdAt
     }
 });
 // REMOVE_EXPENSE
